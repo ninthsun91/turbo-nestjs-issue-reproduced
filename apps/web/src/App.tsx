@@ -4,7 +4,16 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  const onClickHandler = async () => {
+    const res = await fetch('http://localhost:3000');
+    if (res.ok) {
+      setCount(count => count + 1);
+    } else {
+      setCount(count => count -1);
+    }
+  }
 
   return (
     <>
@@ -18,7 +27,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={onClickHandler}>
           count is {count}
         </button>
         <p>

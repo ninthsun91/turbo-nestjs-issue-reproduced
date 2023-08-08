@@ -1,0 +1,7 @@
+.git
+
+node_modules
+apps/api/node_modules
+apps/web/node_modules
+packages/eslint-config-custom/node_modules
+packages/ui/node_modules
